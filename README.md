@@ -22,3 +22,7 @@ or with [Poetry](https://python-poetry.org/)
 ```bash
 poetry add dir-audit
 ```
+
+### Usage
+
+
