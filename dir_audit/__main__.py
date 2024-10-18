@@ -1,18 +1,15 @@
-import argparse
+from parser import get_args
+from make import make_dir
+from check import check_dir
 
-from directory_tree import DisplayTree
 
-parser = argparse.ArgumentParser(
-    prog="dir-audit",
-    description="Audit directory tree structure",
-)
-
-parser.add_argument("directory")
-parser.add_argument("-c", "--contains")
-parser.add_argument("-e", "--empty")
-
-# Main Method
 if __name__ == '__main__':
-    args = parser.parse_args()
+    args = get_args()
 
-    DisplayTree(args.directory)
+    if args.command == "make":
+        make_dir(args)
+    elif args.command == "check":
+        check_dir(args)
+    else:
+        print(f"Not supported command: {args.command}")
+
