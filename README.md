@@ -25,4 +25,40 @@ poetry add dir-audit
 
 ### Usage
 
+get help
 
+```bash
+poetry run python dir_audit --help
+usage: dir-audit [-h] [-v] {make,check} ...
+
+Audit directory tree structure
+
+positional arguments:
+  {make,check}   Audit command
+    make         Make directory tree
+    check        Check directory tree
+
+options:
+  -h, --help     show this help message and exit
+  -v, --version  Get dir-audit version
+```
+
+> NOTE: `make` command is still work in progress.
+
+check for empty directories
+
+```bash
+poetry run python dir_audit check --empty /path/to/your/directory
+```
+
+check for files and directories that contain substring (i.e.: `admin`)
+
+```bash
+poetry run python dir_audit check --contains admin /path/to/your/directory
+```
+
+print full directory tree
+
+```bash
+poetry run python dir_audit check --full /path/to/your/directory
+```
